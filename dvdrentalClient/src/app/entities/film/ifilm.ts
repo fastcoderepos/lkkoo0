@@ -9,6 +9,6 @@ export interface IFilm {
 	replacementCost: number;
 	title: string;
 
-	languageDescriptiveField?: string;
+	languageDescriptiveField?: number;
 	languageId: number;
 }

@@ -34,8 +34,3 @@ export var AuthEntities: string[] = [
 	"userrole",
 ]
 
-export var SchedulerEntities = [
-	'jobdetails',
-	'triggerdetails'
-];
-

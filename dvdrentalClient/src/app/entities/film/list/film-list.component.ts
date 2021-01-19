@@ -56,7 +56,7 @@ export class FilmListComponent extends BaseListComponent<IFilm> implements OnIni
 				],
 				isParent: false,
 				descriptiveField: 'languageDescriptiveField',
-				referencedDescriptiveField: 'name',
+				referencedDescriptiveField: 'languageId',
 				service: this.languageService,
 				associatedObj: undefined,
 				table: 'language',

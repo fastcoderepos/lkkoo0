@@ -16,7 +16,7 @@ public class FindStaffByIdOutput {
   	private Short storeId;
   	private String username;
   	private Integer addressId;
-  	private String addressDescriptiveField;
+  	private Integer addressDescriptiveField;
 	private Long versiono;
  
 }

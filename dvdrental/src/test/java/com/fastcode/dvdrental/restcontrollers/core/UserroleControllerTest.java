@@ -124,9 +124,11 @@ public class UserroleControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table userrole RESTART IDENTITY").executeUpdate();
 
 		em.createNativeQuery("truncate table role RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table f_user").executeUpdate();
 	 	em.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
 		em.getTransaction().commit();

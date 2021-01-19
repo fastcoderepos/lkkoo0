@@ -96,7 +96,7 @@ export class PaymentNewComponent extends BaseNewComponent<IPayment> implements O
 				service: this.customerService,
 				label: 'customer',
 				descriptiveField: 'customerDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'customerId',
 		    
 			},
 			{
@@ -132,7 +132,7 @@ export class PaymentNewComponent extends BaseNewComponent<IPayment> implements O
 				service: this.staffService,
 				label: 'staff',
 				descriptiveField: 'staffDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'staffId',
 		    
 			},
 		];

@@ -28,7 +28,7 @@ describe('AddressListComponent', () => {
       phone: 'phone1',
       postalCode: 'postalCode1',
       cityId: 1,
-      cityDescriptiveField: 'city1',
+      cityDescriptiveField: 1,
     },
     {   
       address: 'address2',
@@ -38,7 +38,7 @@ describe('AddressListComponent', () => {
       phone: 'phone2',
       postalCode: 'postalCode2',
       cityId: 2,
-      cityDescriptiveField: 'city2',
+      cityDescriptiveField: 2,
     },
   ];
   let data: IAddress[] = [... constData];

@@ -54,40 +54,8 @@
 			</exclusions>
 		</dependency>
 	<dependency>
-            <groupId>com.github.paulcwarren</groupId>
-            <artifactId>spring-content-rest-boot-starter</artifactId>
-            <version>1.0.0.M10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.paulcwarren</groupId>
-            <artifactId>spring-content-fs-boot-starter</artifactId>
-            <version>1.0.0.M10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.paulcwarren</groupId>
-            <artifactId>ginkgo4j</artifactId>
-            <version>1.0.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>2.9.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.paulcwarren</groupId>
-            <artifactId>spring-versions-jpa-boot-starter</artifactId>
-            <version>1.0.0.M10</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -109,19 +77,9 @@
             <version>7.7</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>4.3.6.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.directory.server</groupId>
-            <artifactId>apacheds-server-jndi</artifactId>
-            <version>1.5.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>2.3.0</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.javers</groupId>

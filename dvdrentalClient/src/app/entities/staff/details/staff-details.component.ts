@@ -140,7 +140,7 @@ export class StaffDetailsComponent extends BaseDetailsComponent<IStaff> implemen
 		label: 'address',
 		service: this.addressService,
 		descriptiveField: 'addressDescriptiveField',
-	    referencedDescriptiveField: 'district',
+	    referencedDescriptiveField: 'addressId',
 		},
       {
         column: [

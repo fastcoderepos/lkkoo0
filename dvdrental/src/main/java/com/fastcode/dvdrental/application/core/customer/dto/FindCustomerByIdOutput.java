@@ -15,7 +15,7 @@ public class FindCustomerByIdOutput {
   	private String lastName;
   	private Short storeId;
   	private Integer addressId;
-  	private String addressDescriptiveField;
+  	private Integer addressDescriptiveField;
 	private Long versiono;
  
 }

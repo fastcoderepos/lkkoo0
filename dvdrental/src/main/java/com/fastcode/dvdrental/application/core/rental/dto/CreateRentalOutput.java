@@ -11,11 +11,11 @@ public class CreateRentalOutput {
     private Integer rentalId;
     private LocalDate returnDate;
 	private Integer customerId;
-	private String customerDescriptiveField;
+	private Integer customerDescriptiveField;
 	private Integer inventoryId;
-	private Short inventoryDescriptiveField;
+	private Integer inventoryDescriptiveField;
 	private Integer staffId;
-	private String staffDescriptiveField;
+	private Integer staffDescriptiveField;
 
 }
 

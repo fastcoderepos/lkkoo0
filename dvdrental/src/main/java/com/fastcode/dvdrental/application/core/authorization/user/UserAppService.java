@@ -14,9 +14,6 @@ import com.querydsl.core.BooleanBuilder;
 
 import java.time.*;
 import java.util.*;
-import com.fastcode.dvdrental.addons.reporting.domain.dashboardversion.*;
-import com.fastcode.dvdrental.addons.reporting.domain.dashboardversionreport.*;
-import com.fastcode.dvdrental.addons.reporting.domain.reportversion.*;
 import com.fastcode.dvdrental.security.SecurityUtils; 
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,15 +27,6 @@ import org.apache.commons.lang3.StringUtils;
 @Service("userAppService")
 @RequiredArgsConstructor
 public class UserAppService implements IUserAppService {
-
-	@Qualifier("dashboardversionRepository")
-	@NonNull protected final IDashboardversionRepository _dashboardversionRepository;
-
-	@Qualifier("reportversionRepository")
-	@NonNull protected final IReportversionRepository _reportversionRepository;
-
-	@Qualifier("dashboardversionreportRepository")
-	@NonNull protected final IDashboardversionreportRepository _reportDashboardRepository;
 
 	public static final long PASSWORD_TOKEN_EXPIRATION_TIME = 3_600_000; // 1 hour
 
@@ -77,23 +65,6 @@ public class UserAppService implements IUserAppService {
 	public void delete(Long userId) {
 
 		UserEntity existing = _userRepository.findById(userId).orElse(null); 
-		
-		List<DashboardversionreportEntity> dvrList = _reportDashboardRepository.findByUserId(userId);
-		for(DashboardversionreportEntity dvr : dvrList) {
-			_reportDashboardRepository.delete(dvr);
-		}
-
-	    List<DashboardversionEntity> dvList= _dashboardversionRepository.findByUserId(userId);
-	    for(DashboardversionEntity du : dvList )
-	    {
-	    	_dashboardversionRepository.delete(du);
-	    }
-	   
-	    List<ReportversionEntity> rvList = _reportversionRepository.findByUserId(userId);
-	    for(ReportversionEntity rv : rvList)
-	    {
-		   _reportversionRepository.delete(rv);
-	    }
 		
     	UserpreferenceEntity userpreference = _userpreferenceRepository.findById(userId).orElse(null);
     	_userpreferenceRepository.delete(userpreference);
@@ -338,38 +309,6 @@ public class UserAppService implements IUserAppService {
 	}
 	
 
-	
-	public Map<String,String> parseDashboardsJoinColumn(String keysString) {
-		
-		Map<String,String> joinColumnMap = new HashMap<String,String>();
-		joinColumnMap.put("userId", keysString);
-		  
-		return joinColumnMap;
-	}
-	
-	public Map<String,String> parseDashboardversionsJoinColumn(String keysString) {
-		
-		Map<String,String> joinColumnMap = new HashMap<String,String>();
-		joinColumnMap.put("userId", keysString);
-		  
-		return joinColumnMap;
-	}
-	
-	public Map<String,String> parseReportsJoinColumn(String keysString) {
-		
-		Map<String,String> joinColumnMap = new HashMap<String,String>();
-		joinColumnMap.put("userId", keysString);
-		  
-		return joinColumnMap;
-	}
-	
-	public Map<String,String> parseReportversionsJoinColumn(String keysString) {
-		
-		Map<String,String> joinColumnMap = new HashMap<String,String>();
-		joinColumnMap.put("userId", keysString);
-		  
-		return joinColumnMap;
-	}
 	
 	public Map<String,String> parseUserpermissionsJoinColumn(String keysString) {
 		

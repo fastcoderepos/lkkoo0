@@ -81,7 +81,7 @@ export class StoreDetailsComponent extends BaseDetailsComponent<IStore> implemen
 		label: 'address',
 		service: this.addressService,
 		descriptiveField: 'addressDescriptiveField',
-	    referencedDescriptiveField: 'district',
+	    referencedDescriptiveField: 'addressId',
 		},
       {
         column: [
@@ -97,7 +97,7 @@ export class StoreDetailsComponent extends BaseDetailsComponent<IStore> implemen
 		label: 'staff',
 		service: this.staffService,
 		descriptiveField: 'staffDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'staffId',
 		},
 		];
 		

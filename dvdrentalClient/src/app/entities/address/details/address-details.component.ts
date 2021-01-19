@@ -122,7 +122,7 @@ export class AddressDetailsComponent extends BaseDetailsComponent<IAddress> impl
 		label: 'city',
 		service: this.cityService,
 		descriptiveField: 'cityDescriptiveField',
-	    referencedDescriptiveField: 'city',
+	    referencedDescriptiveField: 'cityId',
 		},
       {
         column: [

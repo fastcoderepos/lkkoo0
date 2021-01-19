@@ -251,10 +251,8 @@ public class PaymentAppService implements IPaymentAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("customerId") ||
-		 //       list.get(i).replace("%20","").trim().equals("firstName") ||
 				list.get(i).replace("%20","").trim().equals("rentalId") ||
 				list.get(i).replace("%20","").trim().equals("staffId") ||
-		 //       list.get(i).replace("%20","").trim().equals("firstName") ||
 				list.get(i).replace("%20","").trim().equals("amount") ||
 				list.get(i).replace("%20","").trim().equals("paymentDate") ||
 				list.get(i).replace("%20","").trim().equals("paymentId")
@@ -318,22 +316,6 @@ public class PaymentAppService implements IPaymentAppService {
 				}
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("customer")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(payment.customer.firstName.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(payment.customer.firstName.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(payment.customer.firstName.ne(details.getValue().getSearchValue()));
-			}
-		    if(details.getKey().replace("%20","").trim().equals("staff")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(payment.staff.firstName.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(payment.staff.firstName.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(payment.staff.firstName.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -341,9 +323,6 @@ public class PaymentAppService implements IPaymentAppService {
 		    builder.and(payment.customer.customerId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("customer")) {
-		    builder.and(payment.customer.firstName.eq(joinCol.getValue()));
-        }
         }
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
 		if(joinCol != null && joinCol.getKey().equals("rentalId")) {
@@ -356,9 +335,6 @@ public class PaymentAppService implements IPaymentAppService {
 		    builder.and(payment.staff.staffId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("staff")) {
-		    builder.and(payment.staff.firstName.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

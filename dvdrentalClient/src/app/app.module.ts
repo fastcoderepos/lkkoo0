@@ -21,8 +21,6 @@ import { GlobalPermissionService } from './core/global-permission.service';
 import { LoginExtendedComponent } from './extended/core/login/login.component';
 
 /** end of core components and filters for authorization and authentication **/
-import { ThemeService } from 'ng2-charts';
-import { CubejsClientModule } from '@cubejs-client/ngx';
 import { routingModule } from './app.routing';
 import { SharedModule } from 'src/app/common/shared';
 // import { CoreModule } from './core/core.module';
@@ -33,13 +31,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-const cubejsOptions = {
-	token:
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.K9PiJkjegbhnw4Ca5pPlkTmZihoOm42w8bja9Qs2qJg",
-	options: {
-		apiUrl: "http://localhost:4200/cubejs-api/v1"
-	}
-};
 
 @NgModule({
 	declarations: [
@@ -63,7 +54,6 @@ const cubejsOptions = {
         deps: [HttpClient]
       }
     }),
-		CubejsClientModule.forRoot(cubejsOptions),
 
   ],
   providers: [
@@ -72,7 +62,6 @@ const cubejsOptions = {
 		GlobalPermissionService,
 		{ provide: HTTP_INTERCEPTORS, useClass: JwtErrorInterceptor, multi: true },
 		AuthGuard,
-		ThemeService,
 	],
   bootstrap: [AppComponent],
   entryComponents: [

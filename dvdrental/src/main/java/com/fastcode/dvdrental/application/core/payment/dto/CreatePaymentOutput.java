@@ -12,11 +12,11 @@ public class CreatePaymentOutput {
     private LocalDate paymentDate;
     private Integer paymentId;
 	private Integer customerId;
-	private String customerDescriptiveField;
+	private Integer customerDescriptiveField;
 	private Integer rentalId;
 	private Integer rentalDescriptiveField;
 	private Integer staffId;
-	private String staffDescriptiveField;
+	private Integer staffDescriptiveField;
 
 }
 

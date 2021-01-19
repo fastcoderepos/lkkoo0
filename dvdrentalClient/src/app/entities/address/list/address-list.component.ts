@@ -56,7 +56,7 @@ export class AddressListComponent extends BaseListComponent<IAddress> implements
 				],
 				isParent: false,
 				descriptiveField: 'cityDescriptiveField',
-				referencedDescriptiveField: 'city',
+				referencedDescriptiveField: 'cityId',
 				service: this.cityService,
 				associatedObj: undefined,
 				table: 'city',

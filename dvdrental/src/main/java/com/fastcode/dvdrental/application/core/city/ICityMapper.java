@@ -16,7 +16,7 @@ public interface ICityMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.country.countryId", target = "countryId"),                   
-   @Mapping(source = "entity.country.country", target = "countryDescriptiveField"),                    
+   @Mapping(source = "entity.country.countryId", target = "countryDescriptiveField"),                    
    }) 
    CreateCityOutput cityEntityToCreateCityOutput(CityEntity entity);
    
@@ -24,13 +24,13 @@ public interface ICityMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.country.countryId", target = "countryId"),                   
-    @Mapping(source = "entity.country.country", target = "countryDescriptiveField"),                    
+    @Mapping(source = "entity.country.countryId", target = "countryDescriptiveField"),                    
    	}) 
    	UpdateCityOutput cityEntityToUpdateCityOutput(CityEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.country.countryId", target = "countryId"),                   
-   	@Mapping(source = "entity.country.country", target = "countryDescriptiveField"),                    
+   	@Mapping(source = "entity.country.countryId", target = "countryDescriptiveField"),                    
    	}) 
    	FindCityByIdOutput cityEntityToFindCityByIdOutput(CityEntity entity);
 

@@ -9,7 +9,6 @@ public class FindCountryByIdOutput {
 
   	private String country;
   	private Integer countryId;
-  	private LocalDate lastUpdate;
 	private Long versiono;
  
 }

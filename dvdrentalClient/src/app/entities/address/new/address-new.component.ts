@@ -112,7 +112,7 @@ export class AddressNewComponent extends BaseNewComponent<IAddress> implements O
 				service: this.cityService,
 				label: 'city',
 				descriptiveField: 'cityDescriptiveField',
-				referencedDescriptiveField: 'city',
+				referencedDescriptiveField: 'cityId',
 		    
 			},
 		];

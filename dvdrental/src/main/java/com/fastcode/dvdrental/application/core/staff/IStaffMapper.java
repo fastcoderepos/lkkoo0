@@ -16,7 +16,7 @@ public interface IStaffMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    }) 
    CreateStaffOutput staffEntityToCreateStaffOutput(StaffEntity entity);
    
@@ -24,13 +24,13 @@ public interface IStaffMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-    @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+    @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    	}) 
    	UpdateStaffOutput staffEntityToUpdateStaffOutput(StaffEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   	@Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   	@Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    	}) 
    	FindStaffByIdOutput staffEntityToFindStaffByIdOutput(StaffEntity entity);
 

@@ -1,14 +1,9 @@
 package com.fastcode.dvdrental.domain.core.film;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
 import java.math.BigDecimal;
-import com.fastcode.dvdrental.domain.core.filmactor.FilmActorEntity;
-import com.fastcode.dvdrental.domain.core.inventory.InventoryEntity;
 import com.fastcode.dvdrental.domain.core.language.LanguageEntity;
-import com.fastcode.dvdrental.domain.core.filmcategory.FilmCategoryEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -64,12 +59,6 @@ public class FilmEntity extends AbstractEntity {
     @JoinColumn(name = "LANGUAGE_ID")
     private LanguageEntity language;
 
-    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
-        private Set<InventoryEntity> inventorysSet = new HashSet<InventoryEntity>();
-    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
-        private Set<FilmCategoryEntity> filmCategorysSet = new HashSet<FilmCategoryEntity>();
-    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
-        private Set<FilmActorEntity> filmActorsSet = new HashSet<FilmActorEntity>();
 
 }
 

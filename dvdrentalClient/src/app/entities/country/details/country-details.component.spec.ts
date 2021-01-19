@@ -24,7 +24,6 @@ describe('CountryDetailsComponent', () => {
   let data:ICountry = {
     country: 'country1',
     countryId: 1,
-    lastUpdate: d,
     ... relationData
   };
   

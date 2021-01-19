@@ -120,6 +120,7 @@ public class UserControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table f_user RESTART IDENTITY").executeUpdate();
 
 		em.createNativeQuery("truncate table userpreference RESTART IDENTITY").executeUpdate();
@@ -268,10 +269,6 @@ public class UserControllerTest {
          .andExpect(status().isOk())).hasCause(new EntityExistsException("There already exists a user with UserName =" + user.getUserName()));
 	   
 	} 
-	
-	
-	
-	
 	
 	
 

@@ -21,7 +21,7 @@ describe('CustomerDetailsComponent', () => {
   
   let relationData: any = {
     addressId: 1,
-    addressDescriptiveField: 'district1',
+    addressDescriptiveField: 1,
   }
   let data:ICustomer = {
     active: 1,

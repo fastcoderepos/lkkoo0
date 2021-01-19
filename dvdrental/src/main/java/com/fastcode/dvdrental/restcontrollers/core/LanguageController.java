@@ -92,7 +92,7 @@ public class LanguageController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "name");
+			sort = Sort.by(Sort.Direction.ASC, "languageId");
 		}
 		
 		Pageable Pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);
@@ -107,7 +107,7 @@ public class LanguageController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "title");
+			sort = Sort.by(Sort.Direction.ASC, "filmId");
 		}
 		
 		Pageable pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);

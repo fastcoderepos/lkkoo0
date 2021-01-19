@@ -177,8 +177,6 @@ public class FilmCategoryAppService implements IFilmCategoryAppService {
 	protected void checkProperties(List<String> list) throws Exception  {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
-		 //       list.get(i).replace("%20","").trim().equals("name") ||
-		 //       list.get(i).replace("%20","").trim().equals("title") ||
 				list.get(i).replace("%20","").trim().equals("categoryId") ||
 				list.get(i).replace("%20","").trim().equals("filmId")
 			)) 
@@ -223,22 +221,6 @@ public class FilmCategoryAppService implements IFilmCategoryAppService {
 				}
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("category")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(filmCategory.category.name.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(filmCategory.category.name.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(filmCategory.category.name.ne(details.getValue().getSearchValue()));
-			}
-		    if(details.getKey().replace("%20","").trim().equals("film")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(filmCategory.film.title.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(filmCategory.film.title.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(filmCategory.film.title.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -246,18 +228,12 @@ public class FilmCategoryAppService implements IFilmCategoryAppService {
 		    builder.and(filmCategory.category.categoryId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("category")) {
-		    builder.and(filmCategory.category.name.eq(joinCol.getValue()));
-        }
         }
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
 		if(joinCol != null && joinCol.getKey().equals("filmId")) {
 		    builder.and(filmCategory.film.filmId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("film")) {
-		    builder.and(filmCategory.film.title.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

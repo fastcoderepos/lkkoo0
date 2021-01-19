@@ -21,7 +21,7 @@ describe('FilmDetailsComponent', () => {
   
   let relationData: any = {
     languageId: 1,
-    languageDescriptiveField: 'name1',
+    languageDescriptiveField: 1,
   }
   let data:IFilm = {
     description: 'description1',

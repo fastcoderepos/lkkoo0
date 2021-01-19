@@ -153,7 +153,6 @@ public class StaffAppService implements IStaffAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("addressId") ||
-		 //       list.get(i).replace("%20","").trim().equals("district") ||
 				list.get(i).replace("%20","").trim().equals("active") ||
 				list.get(i).replace("%20","").trim().equals("email") ||
 				list.get(i).replace("%20","").trim().equals("firstName") ||
@@ -250,14 +249,6 @@ public class StaffAppService implements IStaffAppService {
 					builder.and(staff.username.ne(details.getValue().getSearchValue()));
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("address")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(staff.address.district.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(staff.address.district.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(staff.address.district.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -265,9 +256,6 @@ public class StaffAppService implements IStaffAppService {
 		    builder.and(staff.address.addressId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("address")) {
-		    builder.and(staff.address.district.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

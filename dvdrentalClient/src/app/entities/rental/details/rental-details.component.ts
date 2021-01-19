@@ -105,7 +105,7 @@ export class RentalDetailsComponent extends BaseDetailsComponent<IRental> implem
 		label: 'customer',
 		service: this.customerService,
 		descriptiveField: 'customerDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'customerId',
 		},
       {
         column: [
@@ -121,7 +121,7 @@ export class RentalDetailsComponent extends BaseDetailsComponent<IRental> implem
 		label: 'inventory',
 		service: this.inventoryService,
 		descriptiveField: 'inventoryDescriptiveField',
-	    referencedDescriptiveField: 'storeId',
+	    referencedDescriptiveField: 'inventoryId',
 		},
       {
         column: [
@@ -150,7 +150,7 @@ export class RentalDetailsComponent extends BaseDetailsComponent<IRental> implem
 		label: 'staff',
 		service: this.staffService,
 		descriptiveField: 'staffDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'staffId',
 		},
 		];
 		

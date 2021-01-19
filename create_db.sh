@@ -6,7 +6,7 @@ POSTGRES="psql --username postgres"
 echo "Creating database: dvdrental"
 
 $POSTGRES <<EOSQL
-CREATE DATABASE dvdrental OWNER postgres;
+SELECT 'CREATE DATABASE dvdrental' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'dvdrental')\gexec;
 EOSQL
 
 echo "Creating dvdrental tables..."

@@ -201,9 +201,8 @@ public class StoreAppService implements IStoreAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("addressId") ||
-		 //       list.get(i).replace("%20","").trim().equals("district") ||
 				list.get(i).replace("%20","").trim().equals("managerStaffId") ||
-		 //       list.get(i).replace("%20","").trim().equals("firstName") ||
+		 //       list.get(i).replace("%20","").trim().equals("staffId") ||
 				list.get(i).replace("%20","").trim().equals("storeId")
 			)) 
 			{
@@ -232,21 +231,20 @@ public class StoreAppService implements IStoreAppService {
 				}
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("address")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(store.address.district.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(store.address.district.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(store.address.district.ne(details.getValue().getSearchValue()));
-			}
-		    if(details.getKey().replace("%20","").trim().equals("staff")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(store.staff.firstName.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(store.staff.firstName.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(store.staff.firstName.ne(details.getValue().getSearchValue()));
+		     if(details.getKey().replace("%20","").trim().equals("staff")) {
+				if(details.getValue().getOperator().equals("equals") && StringUtils.isNumeric(details.getValue().getSearchValue()))
+					builder.and(store.staff.staffId.eq(Integer.valueOf(details.getValue().getSearchValue())));
+				else if(details.getValue().getOperator().equals("notEqual") && StringUtils.isNumeric(details.getValue().getSearchValue()))
+					builder.and(store.staff.staffId.ne(Integer.valueOf(details.getValue().getSearchValue())));
+				else if(details.getValue().getOperator().equals("range"))
+				{
+				   if(StringUtils.isNumeric(details.getValue().getStartingValue()) && StringUtils.isNumeric(details.getValue().getEndingValue()))
+                	   builder.and(store.staff.staffId.between(Integer.valueOf(details.getValue().getStartingValue()), Integer.valueOf(details.getValue().getEndingValue())));
+                   else if(StringUtils.isNumeric(details.getValue().getStartingValue()))
+                	   builder.and(store.staff.staffId.goe(Integer.valueOf(details.getValue().getStartingValue())));
+                   else if(StringUtils.isNumeric(details.getValue().getEndingValue()))
+                	   builder.and(store.staff.staffId.loe(Integer.valueOf(details.getValue().getEndingValue())));
+				}
 			}
 		}
 		
@@ -255,9 +253,6 @@ public class StoreAppService implements IStoreAppService {
 		    builder.and(store.address.addressId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("address")) {
-		    builder.and(store.address.district.eq(joinCol.getValue()));
-        }
         }
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
 		if(joinCol != null && joinCol.getKey().equals("managerStaffId")) {
@@ -265,7 +260,7 @@ public class StoreAppService implements IStoreAppService {
 		}
         
 		if(joinCol != null && joinCol.getKey().equals("staff")) {
-		    builder.and(store.staff.firstName.eq(joinCol.getValue()));
+		    builder.and(store.staff.staffId.eq(Integer.parseInt(joinCol.getValue())));
         }
         }
 		return builder;

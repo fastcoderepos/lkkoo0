@@ -7,6 +7,6 @@ export interface ICustomer {
 	lastName: string;
 	storeId: number;
 
-	addressDescriptiveField?: string;
+	addressDescriptiveField?: number;
 	addressId: number;
 }

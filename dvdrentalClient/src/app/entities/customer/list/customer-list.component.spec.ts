@@ -29,7 +29,7 @@ describe('CustomerListComponent', () => {
       lastName: 'lastName1',
       storeId: 1,
       addressId: 1,
-      addressDescriptiveField: 'district1',
+      addressDescriptiveField: 1,
     },
     {   
       active: 2,
@@ -40,7 +40,7 @@ describe('CustomerListComponent', () => {
       lastName: 'lastName2',
       storeId: 2,
       addressId: 2,
-      addressDescriptiveField: 'district2',
+      addressDescriptiveField: 2,
     },
   ];
   let data: ICustomer[] = [... constData];

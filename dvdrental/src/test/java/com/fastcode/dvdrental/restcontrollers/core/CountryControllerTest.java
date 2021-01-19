@@ -172,16 +172,26 @@ public class CountryControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table COUNTRY RESTART IDENTITY").executeUpdate();
 
+
 		em.createNativeQuery("truncate table ADDRESS RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table RENTAL RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table LANGUAGE RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table CUSTOMER RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table FILM RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table STAFF RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table COUNTRY RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table CITY RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table INVENTORY RESTART IDENTITY").executeUpdate();
 	 	em.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
 		em.getTransaction().commit();
@@ -341,7 +351,6 @@ public class CountryControllerTest {
 		CountryEntity countryEntity = new CountryEntity();
   		countryEntity.setCountry(String.valueOf(relationCount));
 		countryEntity.setCountryId(relationCount);
-		countryEntity.setLastUpdate(SearchUtils.stringToLocalDate("19"+countCountry+"-09-01"));
 		countryEntity.setVersiono(0L);
 		relationCount++;
 		if(!countryRepository.findAll().contains(countryEntity))
@@ -397,7 +406,6 @@ public class CountryControllerTest {
 		CountryEntity countryEntity = new CountryEntity();
   		countryEntity.setCountry("1");
 		countryEntity.setCountryId(1);
-    	countryEntity.setLastUpdate(SearchUtils.stringToLocalDate("1996-09-01"));
 		countryEntity.setVersiono(0L);
 		
 		return countryEntity;
@@ -407,7 +415,6 @@ public class CountryControllerTest {
 	
 	    CreateCountryInput countryInput = new CreateCountryInput();
   		countryInput.setCountry("5");
-    	countryInput.setLastUpdate(SearchUtils.stringToLocalDate("1996-08-10"));
 		
 		return countryInput;
 	}
@@ -416,7 +423,6 @@ public class CountryControllerTest {
 		CountryEntity country = new CountryEntity();
 		country.setCountry("3");
 		country.setCountryId(3);
-    	country.setLastUpdate(SearchUtils.stringToLocalDate("1996-08-11"));
 		
 		return country;
 	}
@@ -425,7 +431,6 @@ public class CountryControllerTest {
 		CountryEntity country = new CountryEntity();
 		country.setCountry("4");
 		country.setCountryId(4);
-    	country.setLastUpdate(SearchUtils.stringToLocalDate("1996-09-09"));
 		
 		return country;
 	}
@@ -527,7 +532,6 @@ public class CountryControllerTest {
         UpdateCountryInput country = new UpdateCountryInput();
   		country.setCountry("999");
 		country.setCountryId(999);
-		country.setLastUpdate(SearchUtils.stringToLocalDate("1996-09-28"));
 
 		ObjectWriter ow = new ObjectMapper().registerModule(new JavaTimeModule()).disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS).writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(country);
@@ -545,7 +549,6 @@ public class CountryControllerTest {
 		FindCountryByIdOutput output= new FindCountryByIdOutput();
 		output.setCountry(entity.getCountry());
 		output.setCountryId(entity.getCountryId());
-		output.setLastUpdate(entity.getLastUpdate());
 		output.setVersiono(entity.getVersiono());
 		
         Mockito.when(countryAppService.findById(entity.getCountryId())).thenReturn(output);

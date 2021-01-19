@@ -16,8 +16,6 @@ public class UpdateCountryInput {
   	@NotNull(message = "countryId Should not be null")
   	private Integer countryId;
   	
-  	private LocalDate lastUpdate;
-  	
   	private Long versiono;
   
 }

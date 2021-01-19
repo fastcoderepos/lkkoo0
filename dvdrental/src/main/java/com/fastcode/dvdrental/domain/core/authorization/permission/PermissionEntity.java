@@ -1,11 +1,7 @@
 package com.fastcode.dvdrental.domain.core.authorization.permission;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
-import com.fastcode.dvdrental.domain.core.authorization.rolepermission.RolepermissionEntity;
-import com.fastcode.dvdrental.domain.core.authorization.userpermission.UserpermissionEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,10 +29,6 @@ public class PermissionEntity extends AbstractEntity {
     @Column(name = "id", nullable = false)
     private Long id;
     
-    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL)
-        private Set<UserpermissionEntity> userpermissionsSet = new HashSet<UserpermissionEntity>();
-    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL)
-        private Set<RolepermissionEntity> rolepermissionsSet = new HashSet<RolepermissionEntity>();
 
 }
 

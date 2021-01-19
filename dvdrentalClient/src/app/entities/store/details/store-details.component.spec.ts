@@ -21,9 +21,9 @@ describe('StoreDetailsComponent', () => {
   
   let relationData: any = {
     addressId: 1,
-    addressDescriptiveField: 'district1',
+    addressDescriptiveField: 1,
     managerStaffId: 1,
-    staffDescriptiveField: 'firstName1',
+    staffDescriptiveField: 1,
   }
   let data:IStore = {
     storeId: 1,

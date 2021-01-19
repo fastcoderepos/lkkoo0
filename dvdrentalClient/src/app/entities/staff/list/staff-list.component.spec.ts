@@ -30,7 +30,7 @@ describe('StaffListComponent', () => {
       storeId: 1,
       username: 'username1',
       addressId: 1,
-      addressDescriptiveField: 'district1',
+      addressDescriptiveField: 1,
     },
     {   
       active: true,
@@ -42,7 +42,7 @@ describe('StaffListComponent', () => {
       storeId: 2,
       username: 'username2',
       addressId: 2,
-      addressDescriptiveField: 'district2',
+      addressDescriptiveField: 2,
     },
   ];
   let data: IStaff[] = [... constData];

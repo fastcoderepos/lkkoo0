@@ -3,10 +3,10 @@ export interface IRental {
 	rentalId: number;
 	returnDate?: Date;
 
-	customerDescriptiveField?: string;
+	customerDescriptiveField?: number;
 	customerId: number;
 	inventoryDescriptiveField?: number;
 	inventoryId: number;
-	staffDescriptiveField?: string;
+	staffDescriptiveField?: number;
 	staffId: number;
 }

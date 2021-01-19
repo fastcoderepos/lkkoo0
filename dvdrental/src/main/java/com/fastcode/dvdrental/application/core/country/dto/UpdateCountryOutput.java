@@ -9,6 +9,5 @@ public class UpdateCountryOutput {
 
   	private String country;
   	private Integer countryId;
-  	private LocalDate lastUpdate;
 
 }

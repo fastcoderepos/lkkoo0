@@ -19,8 +19,8 @@ describe('FilmCategoryNewComponent', () => {
   let t = DateUtils.formatDateStringToAMPM(d);
   
   let relationData: any = {
-    categoryDescriptiveField: 'name1',
-    filmDescriptiveField: 'title1',
+    categoryDescriptiveField: 1,
+    filmDescriptiveField: 1,
   }
   let data:IFilmCategory = {
 	  categoryId: 1,

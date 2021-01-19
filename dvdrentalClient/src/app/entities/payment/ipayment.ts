@@ -3,10 +3,10 @@ export interface IPayment {
 	paymentDate?: Date;
 	paymentId: number;
 
-	customerDescriptiveField?: string;
+	customerDescriptiveField?: number;
 	customerId: number;
 	rentalDescriptiveField?: number;
 	rentalId: number;
-	staffDescriptiveField?: string;
+	staffDescriptiveField?: number;
 	staffId: number;
 }

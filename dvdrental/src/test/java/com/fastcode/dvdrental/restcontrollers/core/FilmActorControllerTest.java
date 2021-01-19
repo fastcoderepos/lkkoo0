@@ -186,17 +186,28 @@ public class FilmActorControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table FILM_ACTOR RESTART IDENTITY").executeUpdate();
 
 		em.createNativeQuery("truncate table ACTOR RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table FILM RESTART IDENTITY").executeUpdate();
+
+
 		em.createNativeQuery("truncate table RENTAL RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table ADDRESS RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table LANGUAGE RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table CUSTOMER RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table STAFF RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table COUNTRY RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table CITY RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table INVENTORY RESTART IDENTITY").executeUpdate();
 	 	em.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
 		em.getTransaction().commit();
@@ -375,7 +386,6 @@ public class FilmActorControllerTest {
 		CountryEntity countryEntity = new CountryEntity();
   		countryEntity.setCountry(String.valueOf(relationCount));
 		countryEntity.setCountryId(relationCount);
-		countryEntity.setLastUpdate(SearchUtils.stringToLocalDate("19"+countCountry+"-09-01"));
 		countryEntity.setVersiono(0L);
 		relationCount++;
 		if(!countryRepository.findAll().contains(countryEntity))

@@ -23,14 +23,14 @@ describe('FilmActorListComponent', () => {
     {   
       actorId: 1,
       filmId: 1,
-      actorDescriptiveField: 'firstName1',
-      filmDescriptiveField: 'title1',
+      actorDescriptiveField: 1,
+      filmDescriptiveField: 1,
     },
     {   
       actorId: 2,
       filmId: 2,
-      actorDescriptiveField: 'firstName2',
-      filmDescriptiveField: 'title2',
+      actorDescriptiveField: 2,
+      filmDescriptiveField: 2,
     },
   ];
   let data: IFilmActor[] = [... constData];

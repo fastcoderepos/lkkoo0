@@ -188,7 +188,7 @@ export class FilmDetailsComponent extends BaseDetailsComponent<IFilm> implements
 		label: 'language',
 		service: this.languageService,
 		descriptiveField: 'languageDescriptiveField',
-	    referencedDescriptiveField: 'name',
+	    referencedDescriptiveField: 'languageId',
 		},
 		];
 		

@@ -131,7 +131,7 @@ export class CustomerDetailsComponent extends BaseDetailsComponent<ICustomer> im
 		label: 'address',
 		service: this.addressService,
 		descriptiveField: 'addressDescriptiveField',
-	    referencedDescriptiveField: 'district',
+	    referencedDescriptiveField: 'addressId',
 		},
       {
         column: [

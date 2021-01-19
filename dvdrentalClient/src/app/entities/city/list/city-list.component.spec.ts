@@ -24,13 +24,13 @@ describe('CityListComponent', () => {
       city: 'city1',
       cityId: 1,
       countryId: 1,
-      countryDescriptiveField: 'country1',
+      countryDescriptiveField: 1,
     },
     {   
       city: 'city2',
       cityId: 2,
       countryId: 2,
-      countryDescriptiveField: 'country2',
+      countryDescriptiveField: 2,
     },
   ];
   let data: ICity[] = [... constData];

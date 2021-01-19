@@ -16,7 +16,7 @@ public class CreateStaffOutput {
     private Short storeId;
     private String username;
 	private Integer addressId;
-	private String addressDescriptiveField;
+	private Integer addressDescriptiveField;
 
 }
 

@@ -20,11 +20,11 @@ describe('RentalNewComponent', () => {
   
   let relationData: any = {
     customerId: 1,
-    customerDescriptiveField: 'firstName1',
+    customerDescriptiveField: 1,
     inventoryId: 1,
     inventoryDescriptiveField: 1,
     staffId: 1,
-    staffDescriptiveField: 'firstName1',
+    staffDescriptiveField: 1,
   }
   let data:IRental = {
 	  rentalDate: d,

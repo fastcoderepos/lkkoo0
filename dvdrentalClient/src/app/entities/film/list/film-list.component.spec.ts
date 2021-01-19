@@ -31,7 +31,7 @@ describe('FilmListComponent', () => {
       replacementCost: 1,
       title: 'title1',
       languageId: 1,
-      languageDescriptiveField: 'name1',
+      languageDescriptiveField: 1,
     },
     {   
       description: 'description2',
@@ -44,7 +44,7 @@ describe('FilmListComponent', () => {
       replacementCost: 2,
       title: 'title2',
       languageId: 2,
-      languageDescriptiveField: 'name2',
+      languageDescriptiveField: 2,
     },
   ];
   let data: IFilm[] = [... constData];

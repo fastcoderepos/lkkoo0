@@ -20,11 +20,6 @@ const routes: Routes = [
 		loadChildren: './extended/account/account.module#AccountExtendedModule'
 	},
 	{
-		path: 'reporting',
-		loadChildren: './reporting-module/reporting.module#ReportingModule',
-		canActivate: [AuthGuard]
-	},
-	{
 		path: 'country',
 		loadChildren: './extended/entities/country/country.module#CountryExtendedModule',
 		canActivate: [AuthGuard]
@@ -97,11 +92,6 @@ const routes: Routes = [
 	{
 		path: 'customer',
 		loadChildren: './extended/entities/customer/customer.module#CustomerExtendedModule',
-		canActivate: [AuthGuard]
-	},
-	{
-		path: 'scheduler',
-		loadChildren: './scheduler/scheduler.module#SchedulerModule',
 		canActivate: [AuthGuard]
 	},
 	{ path: '**', component:ErrorPageComponent},

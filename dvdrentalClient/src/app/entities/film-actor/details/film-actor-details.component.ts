@@ -81,7 +81,7 @@ export class FilmActorDetailsComponent extends BaseDetailsComponent<IFilmActor> 
 		label: 'actor',
 		service: this.actorService,
 		descriptiveField: 'actorDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'actorId',
 		},
       {
         column: [
@@ -97,7 +97,7 @@ export class FilmActorDetailsComponent extends BaseDetailsComponent<IFilmActor> 
 		label: 'film',
 		service: this.filmService,
 		descriptiveField: 'filmDescriptiveField',
-	    referencedDescriptiveField: 'title',
+	    referencedDescriptiveField: 'filmId',
 		},
 		];
 		

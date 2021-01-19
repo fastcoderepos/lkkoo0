@@ -1,10 +1,7 @@
 package com.fastcode.dvdrental.domain.core.actor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
-import com.fastcode.dvdrental.domain.core.filmactor.FilmActorEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,8 +29,6 @@ public class ActorEntity extends AbstractEntity {
     @Column(name = "ACTOR_ID", nullable = false)
     private Integer actorId;
     
-    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL)
-        private Set<FilmActorEntity> filmActorsSet = new HashSet<FilmActorEntity>();
 
 }
 

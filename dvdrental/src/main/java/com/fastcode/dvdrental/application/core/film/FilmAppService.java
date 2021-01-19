@@ -155,7 +155,6 @@ public class FilmAppService implements IFilmAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("languageId") ||
-		 //       list.get(i).replace("%20","").trim().equals("name") ||
 				list.get(i).replace("%20","").trim().equals("description") ||
 				list.get(i).replace("%20","").trim().equals("filmId") ||
 				list.get(i).replace("%20","").trim().equals("length") ||
@@ -291,14 +290,6 @@ public class FilmAppService implements IFilmAppService {
 					builder.and(film.title.ne(details.getValue().getSearchValue()));
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("language")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(film.language.name.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(film.language.name.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(film.language.name.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -306,9 +297,6 @@ public class FilmAppService implements IFilmAppService {
 		    builder.and(film.language.languageId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("language")) {
-		    builder.and(film.language.name.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

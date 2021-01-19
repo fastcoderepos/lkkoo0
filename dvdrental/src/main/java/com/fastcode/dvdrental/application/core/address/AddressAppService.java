@@ -153,7 +153,6 @@ public class AddressAppService implements IAddressAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("cityId") ||
-		 //       list.get(i).replace("%20","").trim().equals("city") ||
 				list.get(i).replace("%20","").trim().equals("address") ||
 				list.get(i).replace("%20","").trim().equals("address2") ||
 				list.get(i).replace("%20","").trim().equals("addressId") ||
@@ -227,14 +226,6 @@ public class AddressAppService implements IAddressAppService {
 					builder.and(address.postalCode.ne(details.getValue().getSearchValue()));
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("city")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(address.city.city.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(address.city.city.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(address.city.city.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -242,9 +233,6 @@ public class AddressAppService implements IAddressAppService {
 		    builder.and(address.city.cityId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("city")) {
-		    builder.and(address.city.city.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

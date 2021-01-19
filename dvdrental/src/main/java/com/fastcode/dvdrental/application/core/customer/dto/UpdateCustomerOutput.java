@@ -15,6 +15,6 @@ public class UpdateCustomerOutput {
   	private String lastName;
   	private Short storeId;
   	private Integer addressId;
-	private String addressDescriptiveField;
+	private Integer addressDescriptiveField;
 
 }

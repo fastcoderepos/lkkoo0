@@ -18,6 +18,6 @@ public class UpdateFilmOutput {
   	private BigDecimal replacementCost;
   	private String title;
   	private Integer languageId;
-	private String languageDescriptiveField;
+	private Integer languageDescriptiveField;
 
 }

@@ -16,7 +16,7 @@ public interface ICustomerMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    }) 
    CreateCustomerOutput customerEntityToCreateCustomerOutput(CustomerEntity entity);
    
@@ -24,13 +24,13 @@ public interface ICustomerMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-    @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+    @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    	}) 
    	UpdateCustomerOutput customerEntityToUpdateCustomerOutput(CustomerEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   	@Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   	@Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    	}) 
    	FindCustomerByIdOutput customerEntityToFindCustomerByIdOutput(CustomerEntity entity);
 

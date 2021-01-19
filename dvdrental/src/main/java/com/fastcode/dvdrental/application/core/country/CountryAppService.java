@@ -105,8 +105,7 @@ public class CountryAppService implements ICountryAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("country") ||
-				list.get(i).replace("%20","").trim().equals("countryId") ||
-				list.get(i).replace("%20","").trim().equals("lastUpdate")
+				list.get(i).replace("%20","").trim().equals("countryId")
 			)) 
 			{
 			 throw new Exception("Wrong URL Format: Property " + list.get(i) + " not found!" );
@@ -140,24 +139,6 @@ public class CountryAppService implements ICountryAppService {
                    else if(StringUtils.isNumeric(details.getValue().getEndingValue()))
                 	   builder.and(country.countryId.loe(Integer.valueOf(details.getValue().getEndingValue())));
 				}
-			}
-			if(details.getKey().replace("%20","").trim().equals("lastUpdate")) {
-				if(details.getValue().getOperator().equals("equals") && SearchUtils.stringToLocalDate(details.getValue().getSearchValue()) !=null)
-					builder.and(country.lastUpdate.eq(SearchUtils.stringToLocalDate(details.getValue().getSearchValue())));
-				else if(details.getValue().getOperator().equals("notEqual") && SearchUtils.stringToLocalDate(details.getValue().getSearchValue()) !=null)
-					builder.and(country.lastUpdate.ne(SearchUtils.stringToLocalDate(details.getValue().getSearchValue())));
-				else if(details.getValue().getOperator().equals("range"))
-				{
-				   LocalDate startLocalDate= SearchUtils.stringToLocalDate(details.getValue().getStartingValue());
-				   LocalDate endLocalDate= SearchUtils.stringToLocalDate(details.getValue().getEndingValue());
-				   if(startLocalDate!=null && endLocalDate!=null)	 
-					   builder.and(country.lastUpdate.between(startLocalDate,endLocalDate));
-				   else if(endLocalDate!=null)
-					   builder.and(country.lastUpdate.loe(endLocalDate));
-                   else if(startLocalDate!=null)
-                	   builder.and(country.lastUpdate.goe(startLocalDate));  
-                 }
-                   
 			}
 	    
 		}

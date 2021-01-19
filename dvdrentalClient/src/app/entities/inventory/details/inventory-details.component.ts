@@ -86,7 +86,7 @@ export class InventoryDetailsComponent extends BaseDetailsComponent<IInventory> 
 		label: 'film',
 		service: this.filmService,
 		descriptiveField: 'filmDescriptiveField',
-	    referencedDescriptiveField: 'title',
+	    referencedDescriptiveField: 'filmId',
 		},
       {
         column: [

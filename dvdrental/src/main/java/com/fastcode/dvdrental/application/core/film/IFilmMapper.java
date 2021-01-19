@@ -16,7 +16,7 @@ public interface IFilmMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.language.languageId", target = "languageId"),                   
-   @Mapping(source = "entity.language.name", target = "languageDescriptiveField"),                    
+   @Mapping(source = "entity.language.languageId", target = "languageDescriptiveField"),                    
    }) 
    CreateFilmOutput filmEntityToCreateFilmOutput(FilmEntity entity);
    
@@ -24,13 +24,13 @@ public interface IFilmMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.language.languageId", target = "languageId"),                   
-    @Mapping(source = "entity.language.name", target = "languageDescriptiveField"),                    
+    @Mapping(source = "entity.language.languageId", target = "languageDescriptiveField"),                    
    	}) 
    	UpdateFilmOutput filmEntityToUpdateFilmOutput(FilmEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.language.languageId", target = "languageId"),                   
-   	@Mapping(source = "entity.language.name", target = "languageDescriptiveField"),                    
+   	@Mapping(source = "entity.language.languageId", target = "languageDescriptiveField"),                    
    	}) 
    	FindFilmByIdOutput filmEntityToFindFilmByIdOutput(FilmEntity entity);
 

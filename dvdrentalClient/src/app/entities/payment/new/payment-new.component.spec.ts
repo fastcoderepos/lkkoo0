@@ -20,11 +20,11 @@ describe('PaymentNewComponent', () => {
   
   let relationData: any = {
     customerId: 1,
-    customerDescriptiveField: 'firstName1',
+    customerDescriptiveField: 1,
     rentalId: 1,
     rentalDescriptiveField: 1,
     staffId: 1,
-    staffDescriptiveField: 'firstName1',
+    staffDescriptiveField: 1,
   }
   let data:IPayment = {
 	  amount: 1,

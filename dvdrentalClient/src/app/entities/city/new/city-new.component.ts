@@ -80,7 +80,7 @@ export class CityNewComponent extends BaseNewComponent<ICity> implements OnInit 
 				service: this.countryService,
 				label: 'country',
 				descriptiveField: 'countryDescriptiveField',
-				referencedDescriptiveField: 'country',
+				referencedDescriptiveField: 'countryId',
 		    
 			},
 		];

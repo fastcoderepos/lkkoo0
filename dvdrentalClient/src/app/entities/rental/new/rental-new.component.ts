@@ -96,7 +96,7 @@ export class RentalNewComponent extends BaseNewComponent<IRental> implements OnI
 				service: this.customerService,
 				label: 'customer',
 				descriptiveField: 'customerDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'customerId',
 		    
 			},
 			{
@@ -114,7 +114,7 @@ export class RentalNewComponent extends BaseNewComponent<IRental> implements OnI
 				service: this.inventoryService,
 				label: 'inventory',
 				descriptiveField: 'inventoryDescriptiveField',
-				referencedDescriptiveField: 'storeId',
+				referencedDescriptiveField: 'inventoryId',
 		    
 			},
 			{
@@ -132,7 +132,7 @@ export class RentalNewComponent extends BaseNewComponent<IRental> implements OnI
 				service: this.staffService,
 				label: 'staff',
 				descriptiveField: 'staffDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'staffId',
 		    
 			},
 		];

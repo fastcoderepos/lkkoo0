@@ -128,7 +128,7 @@ export class StaffNewComponent extends BaseNewComponent<IStaff> implements OnIni
 				service: this.addressService,
 				label: 'address',
 				descriptiveField: 'addressDescriptiveField',
-				referencedDescriptiveField: 'district',
+				referencedDescriptiveField: 'addressId',
 		    
 			},
 		];

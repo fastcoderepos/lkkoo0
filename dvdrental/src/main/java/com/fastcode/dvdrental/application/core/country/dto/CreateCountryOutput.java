@@ -9,7 +9,6 @@ public class CreateCountryOutput {
 
     private String country;
     private Integer countryId;
-    private LocalDate lastUpdate;
 
 }
 

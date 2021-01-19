@@ -6,6 +6,6 @@ export interface IAddress {
 	phone: string;
 	postalCode?: string;
 
-	cityDescriptiveField?: string;
+	cityDescriptiveField?: number;
 	cityId: number;
 }

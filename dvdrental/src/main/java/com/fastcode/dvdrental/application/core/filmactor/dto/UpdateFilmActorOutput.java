@@ -9,7 +9,7 @@ public class UpdateFilmActorOutput {
 
   	private Integer actorId;
   	private Integer filmId;
-	private String actorDescriptiveField;
-	private String filmDescriptiveField;
+	private Integer actorDescriptiveField;
+	private Integer filmDescriptiveField;
 
 }

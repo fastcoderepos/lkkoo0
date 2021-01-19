@@ -14,7 +14,7 @@ public class CreateAddressOutput {
     private String phone;
     private String postalCode;
 	private Integer cityId;
-	private String cityDescriptiveField;
+	private Integer cityDescriptiveField;
 
 }
 

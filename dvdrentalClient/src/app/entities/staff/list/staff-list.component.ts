@@ -56,7 +56,7 @@ export class StaffListComponent extends BaseListComponent<IStaff> implements OnI
 				],
 				isParent: false,
 				descriptiveField: 'addressDescriptiveField',
-				referencedDescriptiveField: 'district',
+				referencedDescriptiveField: 'addressId',
 				service: this.addressService,
 				associatedObj: undefined,
 				table: 'address',

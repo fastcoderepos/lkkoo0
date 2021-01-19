@@ -1,8 +1,8 @@
 export interface IStore {  
 	storeId: number;
 
-	addressDescriptiveField?: string;
+	addressDescriptiveField?: number;
 	addressId: number;
-	staffDescriptiveField?: string;
+	staffDescriptiveField?: number;
 	managerStaffId: number;
 }

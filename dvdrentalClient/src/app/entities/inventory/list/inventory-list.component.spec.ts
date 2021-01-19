@@ -24,13 +24,13 @@ describe('InventoryListComponent', () => {
       inventoryId: 1,
       storeId: 1,
       filmId: 1,
-      filmDescriptiveField: 'title1',
+      filmDescriptiveField: 1,
     },
     {   
       inventoryId: 2,
       storeId: 2,
       filmId: 2,
-      filmDescriptiveField: 'title2',
+      filmDescriptiveField: 2,
     },
   ];
   let data: IInventory[] = [... constData];

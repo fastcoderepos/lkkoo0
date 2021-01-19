@@ -64,14 +64,6 @@ export class CountryListComponent extends BaseListComponent<ICountry> implements
 				filter: true,
 				type: listColumnType.Number
 			},
-    		{
-				column: 'lastUpdate',
-				searchColumn: 'lastUpdate',
-				label: 'last Update',
-				sort: true,
-				filter: true,
-				type: listColumnType.Date
-			},
 		  	{
 				column: 'actions',
 				label: 'Actions',

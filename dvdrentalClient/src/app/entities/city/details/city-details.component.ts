@@ -99,7 +99,7 @@ export class CityDetailsComponent extends BaseDetailsComponent<ICity> implements
 		label: 'country',
 		service: this.countryService,
 		descriptiveField: 'countryDescriptiveField',
-	    referencedDescriptiveField: 'country',
+	    referencedDescriptiveField: 'countryId',
 		},
 		];
 		

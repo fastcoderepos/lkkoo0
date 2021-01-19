@@ -17,9 +17,9 @@ public interface IStoreMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    @Mapping(source = "entity.staff.staffId", target = "managerStaffId"),                   
-   @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    }) 
    CreateStoreOutput storeEntityToCreateStoreOutput(StoreEntity entity);
    
@@ -27,17 +27,17 @@ public interface IStoreMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.address.addressId", target = "addressId"),                   
-    @Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+    @Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
     @Mapping(source = "entity.staff.staffId", target = "managerStaffId"),                   
-    @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+    @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	UpdateStoreOutput storeEntityToUpdateStoreOutput(StoreEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.address.addressId", target = "addressId"),                   
-   	@Mapping(source = "entity.address.district", target = "addressDescriptiveField"),                    
+   	@Mapping(source = "entity.address.addressId", target = "addressDescriptiveField"),                    
    	@Mapping(source = "entity.staff.staffId", target = "managerStaffId"),                   
-   	@Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   	@Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	FindStoreByIdOutput storeEntityToFindStoreByIdOutput(StoreEntity entity);
 

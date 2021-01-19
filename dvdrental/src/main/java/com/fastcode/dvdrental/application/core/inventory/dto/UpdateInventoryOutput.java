@@ -10,6 +10,6 @@ public class UpdateInventoryOutput {
   	private Integer inventoryId;
   	private Short storeId;
   	private Integer filmId;
-	private String filmDescriptiveField;
+	private Integer filmDescriptiveField;
 
 }

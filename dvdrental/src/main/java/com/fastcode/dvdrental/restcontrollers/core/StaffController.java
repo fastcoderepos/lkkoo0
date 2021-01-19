@@ -109,7 +109,7 @@ public class StaffController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "lastName");
+			sort = Sort.by(Sort.Direction.ASC, "staffId");
 		}
 		
 		Pageable Pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);
@@ -132,7 +132,7 @@ public class StaffController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "amount");
+			sort = Sort.by(Sort.Direction.ASC, "paymentId");
 		}
 		
 		Pageable pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);

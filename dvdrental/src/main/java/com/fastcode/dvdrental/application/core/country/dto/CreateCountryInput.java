@@ -14,8 +14,6 @@ public class CreateCountryInput {
   	@Length(max = 50, message = "country must be less than 50 characters")
   	private String country;
   
-  	private LocalDate lastUpdate;
-  
 
 }
 

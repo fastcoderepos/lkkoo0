@@ -16,22 +16,22 @@ public interface IFilmActorMapper {
    
    
    @Mappings({ 
-   @Mapping(source = "entity.actor.firstName", target = "actorDescriptiveField"),                    
-   @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   @Mapping(source = "entity.actor.actorId", target = "actorDescriptiveField"),                    
+   @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    }) 
    CreateFilmActorOutput filmActorEntityToCreateFilmActorOutput(FilmActorEntity entity);
    
     FilmActorEntity updateFilmActorInputToFilmActorEntity(UpdateFilmActorInput filmActorDto);
     
     @Mappings({ 
-    @Mapping(source = "entity.actor.firstName", target = "actorDescriptiveField"),                    
-    @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+    @Mapping(source = "entity.actor.actorId", target = "actorDescriptiveField"),                    
+    @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	UpdateFilmActorOutput filmActorEntityToUpdateFilmActorOutput(FilmActorEntity entity);
 
    	@Mappings({ 
-   	@Mapping(source = "entity.actor.firstName", target = "actorDescriptiveField"),                    
-   	@Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   	@Mapping(source = "entity.actor.actorId", target = "actorDescriptiveField"),                    
+   	@Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	FindFilmActorByIdOutput filmActorEntityToFindFilmActorByIdOutput(FilmActorEntity entity);
 

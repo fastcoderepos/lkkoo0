@@ -1,17 +1,8 @@
 package com.fastcode.dvdrental.domain.core.authorization.user;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
-import com.fastcode.dvdrental.domain.core.authorization.userpermission.UserpermissionEntity;
 import com.fastcode.dvdrental.domain.core.authorization.userpreference.UserpreferenceEntity;
-import com.fastcode.dvdrental.domain.core.authorization.userrole.UserroleEntity;
-import com.fastcode.dvdrental.domain.core.authorization.tokenverification.TokenverificationEntity;
-import com.fastcode.dvdrental.addons.reporting.domain.report.ReportEntity;
-import com.fastcode.dvdrental.addons.reporting.domain.reportversion.ReportversionEntity;
-import com.fastcode.dvdrental.addons.reporting.domain.dashboard.DashboardEntity;
-import com.fastcode.dvdrental.addons.reporting.domain.dashboardversion.DashboardversionEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -63,22 +54,8 @@ public class UserEntity extends AbstractEntity {
     @Column(name = "is_email_confirmed", nullable = true)
     private Boolean isEmailConfirmed;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<ReportEntity> reportsSet = new HashSet<ReportEntity>();
     @OneToOne(mappedBy = "user", cascade=CascadeType.MERGE)
     private UserpreferenceEntity userpreference;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<DashboardEntity> dashboardsSet = new HashSet<DashboardEntity>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<UserpermissionEntity> userpermissionsSet = new HashSet<UserpermissionEntity>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<DashboardversionEntity> dashboardversionsSet = new HashSet<DashboardversionEntity>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<ReportversionEntity> reportversionsSet = new HashSet<ReportversionEntity>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<TokenverificationEntity> tokenverificationsSet = new HashSet<TokenverificationEntity>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-        private Set<UserroleEntity> userrolesSet = new HashSet<UserroleEntity>();
 
 }
 

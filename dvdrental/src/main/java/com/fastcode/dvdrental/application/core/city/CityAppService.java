@@ -153,7 +153,6 @@ public class CityAppService implements ICityAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("countryId") ||
-		 //       list.get(i).replace("%20","").trim().equals("country") ||
 				list.get(i).replace("%20","").trim().equals("city") ||
 				list.get(i).replace("%20","").trim().equals("cityId")
 			)) 
@@ -191,14 +190,6 @@ public class CityAppService implements ICityAppService {
 				}
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("country")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(city.country.country.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(city.country.country.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(city.country.country.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -206,9 +197,6 @@ public class CityAppService implements ICityAppService {
 		    builder.and(city.country.countryId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("country")) {
-		    builder.and(city.country.country.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

@@ -14,7 +14,7 @@ public class FindAddressByIdOutput {
   	private String phone;
   	private String postalCode;
   	private Integer cityId;
-  	private String cityDescriptiveField;
+  	private Integer cityDescriptiveField;
 	private Long versiono;
  
 }

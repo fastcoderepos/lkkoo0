@@ -1,4 +1,4 @@
-<mat-toolbar class="fc-tool-bar" color="primary" *ngIf="authenticationService.token && !isResourceViewer">
+<mat-toolbar class="fc-tool-bar" color="primary" *ngIf="authenticationService.token">
   <figure class="logo">
     <img src="../../../../assets/images/logo.png" alt="logo" />
   </figure>
@@ -70,37 +70,6 @@
 
         <mat-nav-list class="subnav">
           
-          	<mat-expansion-panel class="expansion-panel" *ngIf="permissions['showReport']">
-	            <mat-expansion-panel-header class="subnav-header">
-	              &nbsp;{{'MainNav.AdhocReports' | translate }}
-	            </mat-expansion-panel-header>
-	
-	            <mat-nav-list class="subnav">
-	
-	              <a mat-list-item class="sidenav-sub-list-item" routerLinkActive="active" [routerLink]="'/reporting/schema'"> Generate Schema </a>
-	              <a mat-list-item class="sidenav-sub-list-item" routerLinkActive="active" [routerLink]="'/reporting/myreports'"> My Reports </a>
-	              <a mat-list-item class="sidenav-sub-list-item" routerLinkActive="active" [routerLink]="'/reporting/dashboard'"> My Dashboards </a>
-	
-	            </mat-nav-list>
-	          </mat-expansion-panel>
-          <mat-expansion-panel class="expansion-panel" *ngIf="permissions['showScheduler']">
-            <mat-expansion-panel-header class="subnav-header">
-              {{'MainNav.JobScheduling.Title' | translate }}
-            </mat-expansion-panel-header>
-
-            <mat-nav-list class="subnav">
-
-              <a mat-list-item class="mat-sub-list-item" routerLinkActive="active" [routerLink]="['scheduler/jobs']" *ngIf="permissions['jobdetails']">{{'MainNav.JobScheduling.Jobs' | translate }}
-              </a>
-              <a mat-list-item class="mat-sub-list-item" routerLinkActive="active" [routerLink]="['scheduler/executingJobs']" *ngIf="permissions['jobdetails']">{{'MainNav.JobScheduling.ExecutingJobs' 
-                | translate }} </a>
-              <a mat-list-item class="mat-sub-list-item" routerLinkActive="active" [routerLink]="['scheduler/triggers']" *ngIf="permissions['triggerdetails']">{{'MainNav.JobScheduling.Triggers' | 
-                translate }} </a>
-              <a mat-list-item class="mat-sub-list-item" routerLinkActive="active" [routerLink]="['scheduler/executionHistory']" *ngIf="permissions['jobdetails']">{{'MainNav.JobScheduling.ExecutionHistory' 
-                | translate }} </a>
-
-            </mat-nav-list>
-          </mat-expansion-panel>
         </mat-nav-list>
       </mat-expansion-panel>
       

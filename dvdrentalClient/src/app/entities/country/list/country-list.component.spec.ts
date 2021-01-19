@@ -23,12 +23,10 @@ describe('CountryListComponent', () => {
     {   
       country: 'country1',
       countryId: 1,
-      lastUpdate: d,
     },
     {   
       country: 'country2',
       countryId: 2,
-      lastUpdate: d,
     },
   ];
   let data: ICountry[] = [... constData];

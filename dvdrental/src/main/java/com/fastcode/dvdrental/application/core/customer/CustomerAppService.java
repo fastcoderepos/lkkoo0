@@ -153,7 +153,6 @@ public class CustomerAppService implements ICustomerAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("addressId") ||
-		 //       list.get(i).replace("%20","").trim().equals("district") ||
 				list.get(i).replace("%20","").trim().equals("active") ||
 				list.get(i).replace("%20","").trim().equals("activebool") ||
 				list.get(i).replace("%20","").trim().equals("customerId") ||
@@ -248,14 +247,6 @@ public class CustomerAppService implements ICustomerAppService {
 				}
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("address")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(customer.address.district.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(customer.address.district.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(customer.address.district.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -263,9 +254,6 @@ public class CustomerAppService implements ICustomerAppService {
 		    builder.and(customer.address.addressId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("address")) {
-		    builder.and(customer.address.district.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

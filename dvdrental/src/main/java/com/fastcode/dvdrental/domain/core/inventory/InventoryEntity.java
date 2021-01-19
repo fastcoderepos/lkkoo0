@@ -1,11 +1,8 @@
 package com.fastcode.dvdrental.domain.core.inventory;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
 import com.fastcode.dvdrental.domain.core.film.FilmEntity;
-import com.fastcode.dvdrental.domain.core.rental.RentalEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +30,6 @@ public class InventoryEntity extends AbstractEntity {
     @JoinColumn(name = "FILM_ID")
     private FilmEntity film;
 
-    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
-        private Set<RentalEntity> rentalsSet = new HashSet<RentalEntity>();
 
 }
 

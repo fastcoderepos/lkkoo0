@@ -9,9 +9,9 @@ public class FindStoreByIdOutput {
 
   	private Integer storeId;
   	private Integer addressId;
-  	private String addressDescriptiveField;
+  	private Integer addressDescriptiveField;
   	private Integer managerStaffId;
-  	private String staffDescriptiveField;
+  	private Integer staffDescriptiveField;
 	private Long versiono;
  
 }

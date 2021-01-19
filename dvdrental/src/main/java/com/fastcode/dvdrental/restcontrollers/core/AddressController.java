@@ -109,7 +109,7 @@ public class AddressController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "district");
+			sort = Sort.by(Sort.Direction.ASC, "addressId");
 		}
 		
 		Pageable Pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);
@@ -132,7 +132,7 @@ public class AddressController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "firstName");
+			sort = Sort.by(Sort.Direction.ASC, "customerId");
 		}
 		
 		Pageable pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);
@@ -155,7 +155,7 @@ public class AddressController {
 		if (limit == null) { limit = env.getProperty("fastCode.limit.default"); }
 
 		if(sort == null || sort.isEmpty()) {
-			sort = Sort.by(Sort.Direction.ASC, "lastName");
+			sort = Sort.by(Sort.Direction.ASC, "staffId");
 		}
 		
 		Pageable pageable = new OffsetBasedPageRequest(Integer.parseInt(offset), Integer.parseInt(limit), sort);

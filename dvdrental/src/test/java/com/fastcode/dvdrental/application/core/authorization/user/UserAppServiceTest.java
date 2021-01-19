@@ -29,9 +29,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.fastcode.dvdrental.addons.reporting.domain.dashboardversion.*;
-import com.fastcode.dvdrental.addons.reporting.domain.dashboardversionreport.*;
-import com.fastcode.dvdrental.addons.reporting.domain.reportversion.*;
 import com.fastcode.dvdrental.domain.core.authorization.user.*;
 import com.fastcode.dvdrental.commons.search.*;
 import com.fastcode.dvdrental.application.core.authorization.user.dto.*;
@@ -55,16 +52,6 @@ public class UserAppServiceTest {
 	@Mock
 	protected IUserRepository _userRepository;
 	
-	
-	@Mock
- 	protected IDashboardversionRepository _dashboardversionRepository;
-	
-	@Mock
- 	protected IReportversionRepository _reportversionRepository;
-	
-	@Mock
- 	protected IDashboardversionreportRepository _reportDashboardRepository;
-
     @Mock
 	protected IUserpreferenceRepository _userpreferenceRepository;
 
@@ -144,15 +131,6 @@ public class UserAppServiceTest {
 		UserEntity user = mock(UserEntity.class);
 		Optional<UserEntity> userOptional = Optional.of((UserEntity) user);
 		Mockito.when(_userRepository.findById(anyLong())).thenReturn(userOptional);
-		
-		List<DashboardversionreportEntity> dvrList = new ArrayList<>();
-		Mockito.when(_reportDashboardRepository.findByUserId(anyLong())).thenReturn(dvrList);
-		
-		List<DashboardversionEntity> dvList= new ArrayList<>();
-		Mockito.when(_dashboardversionRepository.findByUserId(anyLong())).thenReturn(dvList);
-		
-		List<ReportversionEntity> rvList= new ArrayList<>();
-		Mockito.when(_reportversionRepository.findByUserId(anyLong())).thenReturn(rvList);
 		UserpreferenceEntity userpreference = mock(UserpreferenceEntity.class);
 		Optional<UserpreferenceEntity> userpreferenceOptional = Optional.of((UserpreferenceEntity) userpreference);
 		Mockito.when(_userRepository.findById(anyLong())).thenReturn(userOptional);
@@ -282,38 +260,6 @@ public class UserAppServiceTest {
 		Assertions.assertThat(_appService.findByUserName("User1")).isEqualTo(_mapper.userEntityToFindUserByNameOutput(user));
 	}
 	
-	@Test
-	public void ParsedashboardsJoinColumn_KeysStringIsNotEmptyAndKeyValuePairDoesNotExist_ReturnNull()
-	{
-	    Map<String,String> joinColumnMap = new HashMap<String,String>();
-		String keyString= "15";
-		joinColumnMap.put("userId", keyString);
-		Assertions.assertThat(_appService.parseDashboardsJoinColumn(keyString)).isEqualTo(joinColumnMap);
-	}
-	@Test
-	public void ParsedashboardversionsJoinColumn_KeysStringIsNotEmptyAndKeyValuePairDoesNotExist_ReturnNull()
-	{
-	    Map<String,String> joinColumnMap = new HashMap<String,String>();
-		String keyString= "15";
-		joinColumnMap.put("userId", keyString);
-		Assertions.assertThat(_appService.parseDashboardversionsJoinColumn(keyString)).isEqualTo(joinColumnMap);
-	}
-	@Test
-	public void ParsereportsJoinColumn_KeysStringIsNotEmptyAndKeyValuePairDoesNotExist_ReturnNull()
-	{
-	    Map<String,String> joinColumnMap = new HashMap<String,String>();
-		String keyString= "15";
-		joinColumnMap.put("userId", keyString);
-		Assertions.assertThat(_appService.parseReportsJoinColumn(keyString)).isEqualTo(joinColumnMap);
-	}
-	@Test
-	public void ParsereportversionsJoinColumn_KeysStringIsNotEmptyAndKeyValuePairDoesNotExist_ReturnNull()
-	{
-	    Map<String,String> joinColumnMap = new HashMap<String,String>();
-		String keyString= "15";
-		joinColumnMap.put("userId", keyString);
-		Assertions.assertThat(_appService.parseReportversionsJoinColumn(keyString)).isEqualTo(joinColumnMap);
-	}
 	@Test
 	public void ParseuserpermissionsJoinColumn_KeysStringIsNotEmptyAndKeyValuePairDoesNotExist_ReturnNull()
 	{

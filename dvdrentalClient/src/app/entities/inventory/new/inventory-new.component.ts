@@ -80,7 +80,7 @@ export class InventoryNewComponent extends BaseNewComponent<IInventory> implemen
 				service: this.filmService,
 				label: 'film',
 				descriptiveField: 'filmDescriptiveField',
-				referencedDescriptiveField: 'title',
+				referencedDescriptiveField: 'filmId',
 		    
 			},
 		];

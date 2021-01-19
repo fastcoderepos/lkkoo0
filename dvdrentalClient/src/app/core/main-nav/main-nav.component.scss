@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 300px;
+  width: 260px;
   box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
   // @media screen and (max-width: 1200px) {
   //   width: 250px;
@@ -51,6 +51,8 @@
     }
   }
   .mat-sub-list-item {
+    display: flex;
+    align-items: center;
     min-height: 35px;
     height: auto;
     font-size: 16px;
@@ -81,7 +83,7 @@
 }
 
 .logo {
-  width: 300px;
+  width: 260px;
   background: white;
   display: none;
   margin: 0px;

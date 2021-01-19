@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: UIDockerfile
-    container_name: ui
+    container_name: ui_dvdrental
     ports:
       - '4700:443'
     networks:
@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: AppDockerfile
-    container_name: api
+    container_name: api_dvdrental
     ports:
       - '5555:5555'
     depends_on:
@@ -28,7 +28,7 @@ services:
     build:
       context: .
       dockerfile: DBDockerfile
-    container_name: db
+    container_name: db_dvdrental
     volumes:
       - postgresdb:/var/lib/postgresql/data
     environment:

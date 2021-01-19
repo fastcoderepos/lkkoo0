@@ -56,7 +56,7 @@ export class InventoryListComponent extends BaseListComponent<IInventory> implem
 				],
 				isParent: false,
 				descriptiveField: 'filmDescriptiveField',
-				referencedDescriptiveField: 'title',
+				referencedDescriptiveField: 'filmId',
 				service: this.filmService,
 				associatedObj: undefined,
 				table: 'film',

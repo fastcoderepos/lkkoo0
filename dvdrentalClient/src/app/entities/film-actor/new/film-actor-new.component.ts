@@ -76,7 +76,7 @@ export class FilmActorNewComponent extends BaseNewComponent<IFilmActor> implemen
 				service: this.actorService,
 				label: 'actor',
 				descriptiveField: 'actorDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'actorId',
 		    
 			},
 			{
@@ -94,7 +94,7 @@ export class FilmActorNewComponent extends BaseNewComponent<IFilmActor> implemen
 				service: this.filmService,
 				label: 'film',
 				descriptiveField: 'filmDescriptiveField',
-				referencedDescriptiveField: 'title',
+				referencedDescriptiveField: 'filmId',
 		    
 			},
 		];

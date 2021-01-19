@@ -136,7 +136,7 @@ export class FilmNewComponent extends BaseNewComponent<IFilm> implements OnInit 
 				service: this.languageService,
 				label: 'language',
 				descriptiveField: 'languageDescriptiveField',
-				referencedDescriptiveField: 'name',
+				referencedDescriptiveField: 'languageId',
 		    
 			},
 		];

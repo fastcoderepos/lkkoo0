@@ -18,7 +18,7 @@ public class FindFilmByIdOutput {
   	private BigDecimal replacementCost;
   	private String title;
   	private Integer languageId;
-  	private String languageDescriptiveField;
+  	private Integer languageDescriptiveField;
 	private Long versiono;
  
 }

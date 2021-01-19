@@ -76,7 +76,7 @@ export class StoreNewComponent extends BaseNewComponent<IStore> implements OnIni
 				service: this.addressService,
 				label: 'address',
 				descriptiveField: 'addressDescriptiveField',
-				referencedDescriptiveField: 'district',
+				referencedDescriptiveField: 'addressId',
 		    
 			},
 			{
@@ -94,7 +94,7 @@ export class StoreNewComponent extends BaseNewComponent<IStore> implements OnIni
 				service: this.staffService,
 				label: 'staff',
 				descriptiveField: 'staffDescriptiveField',
-				referencedDescriptiveField: 'firstName',
+				referencedDescriptiveField: 'staffId',
 		    
 			},
 		];

@@ -120,7 +120,7 @@ export class CustomerNewComponent extends BaseNewComponent<ICustomer> implements
 				service: this.addressService,
 				label: 'address',
 				descriptiveField: 'addressDescriptiveField',
-				referencedDescriptiveField: 'district',
+				referencedDescriptiveField: 'addressId',
 		    
 			},
 		];

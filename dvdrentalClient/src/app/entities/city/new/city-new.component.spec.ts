@@ -20,7 +20,7 @@ describe('CityNewComponent', () => {
   
   let relationData: any = {
     countryId: 1,
-    countryDescriptiveField: 'country1',
+    countryDescriptiveField: 1,
   }
   let data:ICity = {
 	  city: 'city1',

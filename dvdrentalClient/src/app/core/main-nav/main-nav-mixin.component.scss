@@ -47,6 +47,6 @@
 	  top: 0;
   }
   .active {
-    background-color: mat-color($fc-primary-color-light, lighter) !important;
+    background-color: rgba(0,0,0,.2) !important;
   }
 }

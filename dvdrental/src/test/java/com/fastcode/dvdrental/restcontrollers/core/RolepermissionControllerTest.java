@@ -125,10 +125,13 @@ public class RolepermissionControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table rolepermission RESTART IDENTITY").executeUpdate();
 
 		em.createNativeQuery("truncate table permission RESTART IDENTITY").executeUpdate();
+
 		em.createNativeQuery("truncate table role RESTART IDENTITY").executeUpdate();
+
 	 	em.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
 		em.getTransaction().commit();
 	}

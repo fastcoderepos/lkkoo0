@@ -1,7 +1,6 @@
 package com.fastcode.dvdrental.commons.error;
 
 import com.fastcode.dvdrental.commons.logging.LoggingHelper;
-import org.quartz.SchedulerException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
@@ -269,14 +268,6 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 		logHelper.getLogger().error("An Exception Occurred:", ex);
 		String error = "Internal error occured" ;
 		return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, error, ex));
-	}
-	
-	@ExceptionHandler(SchedulerException.class)
-	public ResponseEntity<Object> handleSchedulerException(Exception ex, WebRequest request) {
-		logHelper.getLogger().error("An Exception Occurred:", ex);
-		ApiError apiError = new ApiError(HttpStatus.NOT_FOUND);
-		apiError.setMessage(ex.getMessage());
-		return buildResponseEntity(apiError);
 	}
 	
 	private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {

@@ -8,6 +8,6 @@ export interface IStaff {
 	storeId: number;
 	username: string;
 
-	addressDescriptiveField?: string;
+	addressDescriptiveField?: number;
 	addressId: number;
 }

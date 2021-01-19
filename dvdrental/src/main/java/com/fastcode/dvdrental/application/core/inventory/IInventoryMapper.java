@@ -16,7 +16,7 @@ public interface IInventoryMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.film.filmId", target = "filmId"),                   
-   @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    }) 
    CreateInventoryOutput inventoryEntityToCreateInventoryOutput(InventoryEntity entity);
    
@@ -24,13 +24,13 @@ public interface IInventoryMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.film.filmId", target = "filmId"),                   
-    @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+    @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	UpdateInventoryOutput inventoryEntityToUpdateInventoryOutput(InventoryEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.film.filmId", target = "filmId"),                   
-   	@Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   	@Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	FindInventoryByIdOutput inventoryEntityToFindInventoryByIdOutput(InventoryEntity entity);
 

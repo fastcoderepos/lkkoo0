@@ -16,22 +16,22 @@ public interface IFilmCategoryMapper {
    
    
    @Mappings({ 
-   @Mapping(source = "entity.category.name", target = "categoryDescriptiveField"),                    
-   @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   @Mapping(source = "entity.category.categoryId", target = "categoryDescriptiveField"),                    
+   @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    }) 
    CreateFilmCategoryOutput filmCategoryEntityToCreateFilmCategoryOutput(FilmCategoryEntity entity);
    
     FilmCategoryEntity updateFilmCategoryInputToFilmCategoryEntity(UpdateFilmCategoryInput filmCategoryDto);
     
     @Mappings({ 
-    @Mapping(source = "entity.category.name", target = "categoryDescriptiveField"),                    
-    @Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+    @Mapping(source = "entity.category.categoryId", target = "categoryDescriptiveField"),                    
+    @Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	UpdateFilmCategoryOutput filmCategoryEntityToUpdateFilmCategoryOutput(FilmCategoryEntity entity);
 
    	@Mappings({ 
-   	@Mapping(source = "entity.category.name", target = "categoryDescriptiveField"),                    
-   	@Mapping(source = "entity.film.title", target = "filmDescriptiveField"),                    
+   	@Mapping(source = "entity.category.categoryId", target = "categoryDescriptiveField"),                    
+   	@Mapping(source = "entity.film.filmId", target = "filmDescriptiveField"),                    
    	}) 
    	FindFilmCategoryByIdOutput filmCategoryEntityToFindFilmCategoryByIdOutput(FilmCategoryEntity entity);
 

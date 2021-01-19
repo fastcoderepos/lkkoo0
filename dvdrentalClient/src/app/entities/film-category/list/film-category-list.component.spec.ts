@@ -23,14 +23,14 @@ describe('FilmCategoryListComponent', () => {
     {   
       categoryId: 1,
       filmId: 1,
-      categoryDescriptiveField: 'name1',
-      filmDescriptiveField: 'title1',
+      categoryDescriptiveField: 1,
+      filmDescriptiveField: 1,
     },
     {   
       categoryId: 2,
       filmId: 2,
-      categoryDescriptiveField: 'name2',
-      filmDescriptiveField: 'title2',
+      categoryDescriptiveField: 2,
+      filmDescriptiveField: 2,
     },
   ];
   let data: IFilmCategory[] = [... constData];

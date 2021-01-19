@@ -18,11 +18,11 @@ public interface IRentalMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-   @Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+   @Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
    @Mapping(source = "entity.inventory.inventoryId", target = "inventoryId"),                   
-   @Mapping(source = "entity.inventory.storeId", target = "inventoryDescriptiveField"),                    
+   @Mapping(source = "entity.inventory.inventoryId", target = "inventoryDescriptiveField"),                    
    @Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-   @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    }) 
    CreateRentalOutput rentalEntityToCreateRentalOutput(RentalEntity entity);
    
@@ -30,21 +30,21 @@ public interface IRentalMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-    @Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+    @Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
     @Mapping(source = "entity.inventory.inventoryId", target = "inventoryId"),                   
-    @Mapping(source = "entity.inventory.storeId", target = "inventoryDescriptiveField"),                    
+    @Mapping(source = "entity.inventory.inventoryId", target = "inventoryDescriptiveField"),                    
     @Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-    @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+    @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	UpdateRentalOutput rentalEntityToUpdateRentalOutput(RentalEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-   	@Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+   	@Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
    	@Mapping(source = "entity.inventory.inventoryId", target = "inventoryId"),                   
-   	@Mapping(source = "entity.inventory.storeId", target = "inventoryDescriptiveField"),                    
+   	@Mapping(source = "entity.inventory.inventoryId", target = "inventoryDescriptiveField"),                    
    	@Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-   	@Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   	@Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	FindRentalByIdOutput rentalEntityToFindRentalByIdOutput(RentalEntity entity);
 

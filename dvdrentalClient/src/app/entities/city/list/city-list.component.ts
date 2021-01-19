@@ -56,7 +56,7 @@ export class CityListComponent extends BaseListComponent<ICity> implements OnIni
 				],
 				isParent: false,
 				descriptiveField: 'countryDescriptiveField',
-				referencedDescriptiveField: 'country',
+				referencedDescriptiveField: 'countryId',
 				service: this.countryService,
 				associatedObj: undefined,
 				table: 'country',

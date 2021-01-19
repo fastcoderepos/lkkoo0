@@ -1,12 +1,8 @@
 package com.fastcode.dvdrental.domain.core.customer;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.*;
 import com.fastcode.dvdrental.domain.core.address.AddressEntity;
-import com.fastcode.dvdrental.domain.core.payment.PaymentEntity;
-import com.fastcode.dvdrental.domain.core.rental.RentalEntity;
 import com.fastcode.dvdrental.domain.core.abstractentity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -54,10 +50,6 @@ public class CustomerEntity extends AbstractEntity {
     @JoinColumn(name = "ADDRESS_ID")
     private AddressEntity address;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-        private Set<PaymentEntity> paymentsSet = new HashSet<PaymentEntity>();
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-        private Set<RentalEntity> rentalsSet = new HashSet<RentalEntity>();
 
 }
 

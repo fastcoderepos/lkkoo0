@@ -81,7 +81,7 @@ export class FilmCategoryDetailsComponent extends BaseDetailsComponent<IFilmCate
 		label: 'category',
 		service: this.categoryService,
 		descriptiveField: 'categoryDescriptiveField',
-	    referencedDescriptiveField: 'name',
+	    referencedDescriptiveField: 'categoryId',
 		},
       {
         column: [
@@ -97,7 +97,7 @@ export class FilmCategoryDetailsComponent extends BaseDetailsComponent<IFilmCate
 		label: 'film',
 		service: this.filmService,
 		descriptiveField: 'filmDescriptiveField',
-	    referencedDescriptiveField: 'title',
+	    referencedDescriptiveField: 'filmId',
 		},
 		];
 		

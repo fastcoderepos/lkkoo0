@@ -56,7 +56,7 @@ export class CustomerListComponent extends BaseListComponent<ICustomer> implemen
 				],
 				isParent: false,
 				descriptiveField: 'addressDescriptiveField',
-				referencedDescriptiveField: 'district',
+				referencedDescriptiveField: 'addressId',
 				service: this.addressService,
 				associatedObj: undefined,
 				table: 'address',

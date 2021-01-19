@@ -249,11 +249,8 @@ public class RentalAppService implements IRentalAppService {
 		for (int i = 0; i < list.size(); i++) {
 			if(!(
 				list.get(i).replace("%20","").trim().equals("customerId") ||
-		 //       list.get(i).replace("%20","").trim().equals("firstName") ||
 				list.get(i).replace("%20","").trim().equals("inventoryId") ||
-		 //       list.get(i).replace("%20","").trim().equals("storeId") ||
 				list.get(i).replace("%20","").trim().equals("staffId") ||
-		 //       list.get(i).replace("%20","").trim().equals("firstName") ||
 				list.get(i).replace("%20","").trim().equals("rentalDate") ||
 				list.get(i).replace("%20","").trim().equals("rentalId") ||
 				list.get(i).replace("%20","").trim().equals("returnDate")
@@ -320,37 +317,6 @@ public class RentalAppService implements IRentalAppService {
                    
 			}
 	    
-		    if(details.getKey().replace("%20","").trim().equals("customer")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(rental.customer.firstName.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(rental.customer.firstName.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(rental.customer.firstName.ne(details.getValue().getSearchValue()));
-			}
-		   if(details.getKey().replace("%20","").trim().equals("inventory")) {
-				if(details.getValue().getOperator().equals("equals") && StringUtils.isNumeric(details.getValue().getSearchValue()))
-					builder.and(rental.inventory.storeId.eq(Short.valueOf(details.getValue().getSearchValue())));
-				else if(details.getValue().getOperator().equals("notEqual") && StringUtils.isNumeric(details.getValue().getSearchValue()))
-					builder.and(rental.inventory.storeId.ne(Short.valueOf(details.getValue().getSearchValue())));
-				else if(details.getValue().getOperator().equals("range"))
-				{
-				   if(StringUtils.isNumeric(details.getValue().getStartingValue()) && StringUtils.isNumeric(details.getValue().getEndingValue()))
-                	   builder.and(rental.inventory.storeId.between(Short.valueOf(details.getValue().getStartingValue()), Short.valueOf(details.getValue().getEndingValue())));
-                   else if(StringUtils.isNumeric(details.getValue().getStartingValue()))
-                	   builder.and(rental.inventory.storeId.goe(Short.valueOf(details.getValue().getStartingValue())));
-                   else if(StringUtils.isNumeric(details.getValue().getEndingValue()))
-                	   builder.and(rental.inventory.storeId.loe(Short.valueOf(details.getValue().getEndingValue())));
-				}
-			}
-		    if(details.getKey().replace("%20","").trim().equals("staff")) {
-				if(details.getValue().getOperator().equals("contains"))
-					builder.and(rental.staff.firstName.likeIgnoreCase("%"+ details.getValue().getSearchValue() + "%"));
-				else if(details.getValue().getOperator().equals("equals"))
-					builder.and(rental.staff.firstName.eq(details.getValue().getSearchValue()));
-				else if(details.getValue().getOperator().equals("notEqual"))
-					builder.and(rental.staff.firstName.ne(details.getValue().getSearchValue()));
-			}
 		}
 		
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
@@ -358,27 +324,18 @@ public class RentalAppService implements IRentalAppService {
 		    builder.and(rental.customer.customerId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("customer")) {
-		    builder.and(rental.customer.firstName.eq(joinCol.getValue()));
-        }
         }
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
 		if(joinCol != null && joinCol.getKey().equals("inventoryId")) {
 		    builder.and(rental.inventory.inventoryId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("inventory")) {
-		    builder.and(rental.inventory.storeId.eq(Short.parseShort(joinCol.getValue())));
-        }
         }
 		for (Map.Entry<String, String> joinCol : joinColumns.entrySet()) {
 		if(joinCol != null && joinCol.getKey().equals("staffId")) {
 		    builder.and(rental.staff.staffId.eq(Integer.parseInt(joinCol.getValue())));
 		}
         
-		if(joinCol != null && joinCol.getKey().equals("staff")) {
-		    builder.and(rental.staff.firstName.eq(joinCol.getValue()));
-        }
         }
 		return builder;
 	}

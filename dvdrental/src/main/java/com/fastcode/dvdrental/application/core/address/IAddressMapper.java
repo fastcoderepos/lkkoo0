@@ -16,7 +16,7 @@ public interface IAddressMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.city.cityId", target = "cityId"),                   
-   @Mapping(source = "entity.city.city", target = "cityDescriptiveField"),                    
+   @Mapping(source = "entity.city.cityId", target = "cityDescriptiveField"),                    
    }) 
    CreateAddressOutput addressEntityToCreateAddressOutput(AddressEntity entity);
    
@@ -24,13 +24,13 @@ public interface IAddressMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.city.cityId", target = "cityId"),                   
-    @Mapping(source = "entity.city.city", target = "cityDescriptiveField"),                    
+    @Mapping(source = "entity.city.cityId", target = "cityDescriptiveField"),                    
    	}) 
    	UpdateAddressOutput addressEntityToUpdateAddressOutput(AddressEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.city.cityId", target = "cityId"),                   
-   	@Mapping(source = "entity.city.city", target = "cityDescriptiveField"),                    
+   	@Mapping(source = "entity.city.cityId", target = "cityDescriptiveField"),                    
    	}) 
    	FindAddressByIdOutput addressEntityToFindAddressByIdOutput(AddressEntity entity);
 

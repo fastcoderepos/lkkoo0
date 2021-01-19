@@ -98,6 +98,7 @@ public class CategoryControllerTest {
 		EntityManager em = emfs.createEntityManager();
 		em.getTransaction().begin();
 		em.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
+
 		em.createNativeQuery("truncate table CATEGORY RESTART IDENTITY").executeUpdate();
 
 	 	em.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();

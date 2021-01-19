@@ -18,11 +18,11 @@ public interface IPaymentMapper {
    
    @Mappings({ 
    @Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-   @Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+   @Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
    @Mapping(source = "entity.rental.rentalId", target = "rentalId"),                   
    @Mapping(source = "entity.rental.rentalId", target = "rentalDescriptiveField"),                    
    @Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-   @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    }) 
    CreatePaymentOutput paymentEntityToCreatePaymentOutput(PaymentEntity entity);
    
@@ -30,21 +30,21 @@ public interface IPaymentMapper {
     
     @Mappings({ 
     @Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-    @Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+    @Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
     @Mapping(source = "entity.rental.rentalId", target = "rentalId"),                   
     @Mapping(source = "entity.rental.rentalId", target = "rentalDescriptiveField"),                    
     @Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-    @Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+    @Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	UpdatePaymentOutput paymentEntityToUpdatePaymentOutput(PaymentEntity entity);
 
    	@Mappings({ 
    	@Mapping(source = "entity.customer.customerId", target = "customerId"),                   
-   	@Mapping(source = "entity.customer.firstName", target = "customerDescriptiveField"),                    
+   	@Mapping(source = "entity.customer.customerId", target = "customerDescriptiveField"),                    
    	@Mapping(source = "entity.rental.rentalId", target = "rentalId"),                   
    	@Mapping(source = "entity.rental.rentalId", target = "rentalDescriptiveField"),                    
    	@Mapping(source = "entity.staff.staffId", target = "staffId"),                   
-   	@Mapping(source = "entity.staff.firstName", target = "staffDescriptiveField"),                    
+   	@Mapping(source = "entity.staff.staffId", target = "staffDescriptiveField"),                    
    	}) 
    	FindPaymentByIdOutput paymentEntityToFindPaymentByIdOutput(PaymentEntity entity);
 

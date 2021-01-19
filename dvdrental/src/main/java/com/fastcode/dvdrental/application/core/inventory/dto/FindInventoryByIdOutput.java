@@ -10,7 +10,7 @@ public class FindInventoryByIdOutput {
   	private Integer inventoryId;
   	private Short storeId;
   	private Integer filmId;
-  	private String filmDescriptiveField;
+  	private Integer filmDescriptiveField;
 	private Long versiono;
  
 }

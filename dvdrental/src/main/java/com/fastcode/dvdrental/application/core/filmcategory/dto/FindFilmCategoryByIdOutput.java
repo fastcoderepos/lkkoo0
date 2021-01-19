@@ -9,8 +9,8 @@ public class FindFilmCategoryByIdOutput {
 
   	private Integer categoryId;
   	private Integer filmId;
-  	private String categoryDescriptiveField;
-  	private String filmDescriptiveField;
+  	private Integer categoryDescriptiveField;
+  	private Integer filmDescriptiveField;
 	private Long versiono;
  
 }

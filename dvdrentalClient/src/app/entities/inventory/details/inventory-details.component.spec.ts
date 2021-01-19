@@ -21,7 +21,7 @@ describe('InventoryDetailsComponent', () => {
   
   let relationData: any = {
     filmId: 1,
-    filmDescriptiveField: 'title1',
+    filmDescriptiveField: 1,
   }
   let data:IInventory = {
     inventoryId: 1,

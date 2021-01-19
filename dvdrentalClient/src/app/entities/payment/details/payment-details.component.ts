@@ -104,7 +104,7 @@ export class PaymentDetailsComponent extends BaseDetailsComponent<IPayment> impl
 		label: 'customer',
 		service: this.customerService,
 		descriptiveField: 'customerDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'customerId',
 		},
       {
         column: [
@@ -136,7 +136,7 @@ export class PaymentDetailsComponent extends BaseDetailsComponent<IPayment> impl
 		label: 'staff',
 		service: this.staffService,
 		descriptiveField: 'staffDescriptiveField',
-	    referencedDescriptiveField: 'firstName',
+	    referencedDescriptiveField: 'staffId',
 		},
 		];
 		

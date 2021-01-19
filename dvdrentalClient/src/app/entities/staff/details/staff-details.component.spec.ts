@@ -21,7 +21,7 @@ describe('StaffDetailsComponent', () => {
   
   let relationData: any = {
     addressId: 1,
-    addressDescriptiveField: 'district1',
+    addressDescriptiveField: 1,
   }
   let data:IStaff = {
     active: true,

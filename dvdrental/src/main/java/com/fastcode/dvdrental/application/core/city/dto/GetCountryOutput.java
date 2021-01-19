@@ -9,7 +9,6 @@ public class GetCountryOutput {
 
  	private String country;
  	private Integer countryId;
- 	private LocalDate lastUpdate;
   	private Integer cityCityId;
 
 }

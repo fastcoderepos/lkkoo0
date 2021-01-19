@@ -10,6 +10,6 @@ public class UpdateCityOutput {
   	private String city;
   	private Integer cityId;
   	private Integer countryId;
-	private String countryDescriptiveField;
+	private Integer countryDescriptiveField;
 
 }

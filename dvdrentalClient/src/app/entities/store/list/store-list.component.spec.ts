@@ -23,16 +23,16 @@ describe('StoreListComponent', () => {
     {   
       storeId: 1,
       addressId: 1,
-      addressDescriptiveField: 'district1',
+      addressDescriptiveField: 1,
       managerStaffId: 1,
-      staffDescriptiveField: 'firstName1',
+      staffDescriptiveField: 1,
     },
     {   
       storeId: 2,
       addressId: 2,
-      addressDescriptiveField: 'district2',
+      addressDescriptiveField: 2,
       managerStaffId: 2,
-      staffDescriptiveField: 'firstName2',
+      staffDescriptiveField: 2,
     },
   ];
   let data: IStore[] = [... constData];

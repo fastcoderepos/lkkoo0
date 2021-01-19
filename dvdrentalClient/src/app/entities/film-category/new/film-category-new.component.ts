@@ -76,7 +76,7 @@ export class FilmCategoryNewComponent extends BaseNewComponent<IFilmCategory> im
 				service: this.categoryService,
 				label: 'category',
 				descriptiveField: 'categoryDescriptiveField',
-				referencedDescriptiveField: 'name',
+				referencedDescriptiveField: 'categoryId',
 		    
 			},
 			{
@@ -94,7 +94,7 @@ export class FilmCategoryNewComponent extends BaseNewComponent<IFilmCategory> im
 				service: this.filmService,
 				label: 'film',
 				descriptiveField: 'filmDescriptiveField',
-				referencedDescriptiveField: 'title',
+				referencedDescriptiveField: 'filmId',
 		    
 			},
 		];
